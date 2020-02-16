@@ -1,0 +1,11 @@
+<h1>Github Public Repositories</h1>
+
+<%= form_tag repositories_path, method: :get, remote: true  do %>
+  <%= label_tag(:search, 'Look for a public GitHub repo by username: ') %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag('Search', username: nil) %>
+<% end %>
+
+<br>
+
+<div id="repositories"></div>

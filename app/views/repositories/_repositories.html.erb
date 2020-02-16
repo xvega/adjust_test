@@ -1,0 +1,18 @@
+<h1>Results</h1>
+
+  <% if @repositories.code == 200 %>
+    <table>
+      <tr>
+        <th>name</th>
+        <th>html_url</th>
+      </tr>
+      <% @repositories.each do |repository| %>
+        <tr>
+          <td><%= repository['name'] %></td>
+          <td><%= (repository['html_url']).gsub(URI.regexp, '<a href="\0">\0</a>').html_safe %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% else %>
+    <h3><%= @repositories.parsed_response['message'] %></h3>
+  <% end %>
