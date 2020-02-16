@@ -21,6 +21,7 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'rubocop'
+  gem 'rails-controller-testing'
 end
 
 group :development do
